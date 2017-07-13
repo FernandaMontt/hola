@@ -1,7 +1,4 @@
-﻿{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
      
     <meta charset="utf-8">
@@ -34,9 +31,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
 </head>
-
 <body>
-    <div class="address-bar">
+<div class="address-bar">
 	</div>
 
     <!-- Navigation -->
@@ -61,7 +57,7 @@
                         <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a href="otrapag.html">Tutoriales</a>
+                        <a href="about.html">Tutoriales</a>
                     </li>
                     <li>
                         <a href="contact.html">Contactanos</a>
@@ -116,64 +112,17 @@
                 </div>
             </div>
         </div>
-
-        <div class="content container">
-            <div class="row">
-			<div class="col-md-8">
-			{% block content %}
-			{% for post in posts %}
-                <div class="post">
-                    <hr>
-                    <h2 class="intro-text text-center">Post
-                        <strong>
-							{{post}}
-						</strong>
-                    </h2>
-					<div class="date">
-					<p>published: {{ post.published_date }}</p>
-					</div>
-					<h1><a href="">{{ post.title }}</a></h1>
-					<p>{{ post.text|linebreaksbr }}</p>
-                    <hr>
-                    
-                    <hr class="visible-xs">
-                    <p><img class="img-responsive img-border" src="bg.jpg" alt=""></p>
-                    <p></p>
-                    <p></p>
+		{% block content %}
+        <div class="post">
+            {% if post.published_date %}
+                <div class="date">
+                    {{ post.published_date }}
                 </div>
-				{% endfor %}
-				{% endblock content %}
-				</div>
-            </div>
+            {% endif %}
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-      
-    </div>
-    <!-- /.container -->
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p></p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
-
+    {% endblock %}
 </body>
 
 </html>

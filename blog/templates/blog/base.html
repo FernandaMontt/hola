@@ -1,4 +1,4 @@
-﻿{% load staticfiles %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +36,8 @@
 </head>
 
 <body>
+
+    <div class="brand">Pagina Prueba</div>
     <div class="address-bar">
 	</div>
 
@@ -61,7 +63,7 @@
                         <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a href="otrapag.html">Tutoriales</a>
+                        <a href="about.html">Tutoriales</a>
                     </li>
                     <li>
                         <a href="contact.html">Contactanos</a>
@@ -111,7 +113,7 @@
                         <small>Bienvenidos</small>
                     </h2>
 					<div class="page-header">
-                    <h1 class="brand-name"><a href="/">Pagina de prueba</a></h1>                    
+                    <h1 class="brand-name"><a href="/">Pagina de prueba 2</a></h1>                    
 					</div>
                 </div>
             </div>
@@ -121,29 +123,8 @@
             <div class="row">
 			<div class="col-md-8">
 			{% block content %}
-			{% for post in posts %}
-                <div class="post">
-                    <hr>
-                    <h2 class="intro-text text-center">Post
-                        <strong>
-							{{post}}
-						</strong>
-                    </h2>
-					<div class="date">
-					<p>published: {{ post.published_date }}</p>
-					</div>
-					<h1><a href="">{{ post.title }}</a></h1>
-					<p>{{ post.text|linebreaksbr }}</p>
-                    <hr>
-                    
-                    <hr class="visible-xs">
-                    <p><img class="img-responsive img-border" src="bg.jpg" alt=""></p>
-                    <p></p>
-                    <p></p>
-                </div>
-				{% endfor %}
-				{% endblock content %}
-				</div>
+			{% endblock %}
+			</div>
             </div>
         </div>
 
