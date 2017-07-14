@@ -63,9 +63,6 @@
                     <li>
                         <a href="http://127.0.0.1:8000/admin/login/?next=/admin/">Admin</a>
                     </li>
-                    <li>
-                        <a href="">Contactanos</a>
-                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -89,13 +86,13 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="img-responsive img-full" src="img/DANZA.png" alt="">
+                                <img class="img-responsive img-full" src="{% static 'css/bg.jpg' %}" alt="">
                             </div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="img/danza2.jpg" alt="">
+                                <img class="img-responsive img-full" src="{% static 'css/intro-pic.jpg' %}" alt="">
                             </div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="img/danza3.jpg" alt="">
+                                <img class="img-responsive img-full" src="{% static 'css/bg.jpg' %}" alt="">
                             </div>
                         </div>
 
@@ -114,17 +111,14 @@
 					
                     <h1 class="brand-name"><a href="/">Pagina de prueba</a></h1>                    
 					</div>
-                </div>
-            </div>
-        </div>
-        <div class="content container">
+					<div class="content container">
             <div class="row">
 			<div class="col-md-8">
 			{% block content %}
 			{% for post in posts %}
                 <div class="post">
                     <hr>
-                    <h2 class="intro-text text-center">Post
+                    <h2 class="intro-text text-center">Post: 
                         <strong>
 							{{post}}
 						</strong>
@@ -137,7 +131,7 @@
                     <hr>
                     
                     <hr class="visible-xs">
-                    <p><img class="img-responsive img-border" src="bg.jpg" alt=""></p>
+                    <p><img class="img-responsive img-border" src="{% static 'css/intro-pic.jpg' %}" alt=""></p>
                     <p></p>
                     <p></p>
                 </div>
@@ -146,6 +140,10 @@
 				</div>
             </div>
         </div>
+                </div>
+            </div>
+        </div>
+        
 
       
     </div>
